@@ -1,0 +1,33 @@
+﻿<h2>Movies</h2>
+<main ng-controller="MoviesController">
+    <div class="row">
+        <div class="col-md-12 options">
+            <a href="/MoviesAdmin/Register" class="btn btn-primary">
+                <i class="glyphicon glyphicon-plus"></i> Create
+            </a>
+            <a ng-click="getAll()" class="btn btn-primary">
+                <i class="glyphicon glyphicon-refresh"></i> Refresh
+            </a>
+        </div>
+    </div>
+
+    <br />
+
+    <section class="row">
+        <div class="col-sm-6 col-md-4" ng-repeat="movie in movies">
+            <article class="thumbnail movie_item">
+                <img src="" alt="" />
+                <div class="caption">
+                    <h3>{{ movie.Title }}</h3>
+                    <p class="truncate">{{ movie.Description }}</p>
+                    <footer class="movie_item_options">
+                        <a href="/MoviesAdmin/Details/{{movie.MovieID}}" class="btn btn-primary">Details</a>
+                        <a href="/MoviesAdmin/Edit/{{movie.MovieID}}" class="btn btn-primary">Edit</a>
+                        <a  ng-click="delete(movie)" class="btn btn-primary ">Delete</a>
+                    </footer>
+                </div>
+            </article>
+            <br />
+        </div>            
+    </section>
+</main>

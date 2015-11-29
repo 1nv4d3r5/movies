@@ -1,0 +1,24 @@
+﻿@model long
+
+<main ng-controller="MovieDetailsController">
+    <h2>Movie {{movie.Title}}</h2>
+
+    <article>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <p id="price">{{ movie.Price | currency }}</p>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <p id="description">{{ movie.Description }}</p>
+        </div>
+        <br />
+        <footer class="uppercase">
+            <a href="/MoviesAdmin/Edit/{{movie.MovieID}}" class="btn btn-primary">Edit</a>
+            <a ng-click="delete(movie)" class="btn btn-primary ">Delete</a>
+            <a href="/" class="btn btn-default">Return</a>
+        </footer>
+    </article>
+</main>
+
+
